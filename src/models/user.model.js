@@ -65,7 +65,7 @@ userSchema.methods.generateAccessToken = function(){
             _id: this._id,
             email: this.email,
             username: this.username,
-            fullName: thid.fullName,
+            fullName: this.fullName,
         },
         process.env.ACCESS_TOKEN_SECERT,
         {
@@ -84,6 +84,5 @@ userSchema.methods.generateRefreshToken = function(){
         }
     )
 }
-userSchema.methods.generateRefreshToken = function(){}
 
 export const User = mongoose.model("User", userSchema);
